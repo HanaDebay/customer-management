@@ -12,6 +12,7 @@ import java.util.Objects;
 class Customer extends Person{
     private int customerID;
     private double balance;
+    private double money;
      public Customer(String name, int age, String userName, String password, double balance) {
          super(name, age, userName, password);
          this.balance = balance;
@@ -28,6 +29,14 @@ class Customer extends Person{
 
     public int getCustomerID() {
         return customerID;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
+
+    public double getMoney() {
+        return money;
     }
 
     @Override

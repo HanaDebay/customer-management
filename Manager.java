@@ -6,6 +6,11 @@ import java.util.Objects;
 //Overide toString again and print extra managerID
 //override equals function and check if username and password matchs
 // or managerIDand password match.  IF any of cases are correct we will return true.
+
+//1- Create increase money and decrease money function from manager
+//Create a function called updateMoney(Customer, changeAmount);
+//then change the money of customer. change amount can be negative
+// so basicly we need to do => previous amount + changeAmount into customer account.
 class Manager extends Person {
     int managerID;
     private int actionNumber;  // Set to zero in the constructor
@@ -15,8 +20,13 @@ class Manager extends Person {
         this.managerID = (int)(1000000*Math.random());
         this.surName= surName;
         this.actionNumber = 0;
-
     }
+    public void updateMoney(Customer customer, double changeAmount){
+            double oldBalance = customer.getBalance();
+            double newBalance = customer.getBalance() + changeAmount;
+            customer.setBalance(newBalance);
+    }
+
 
     public int getActionNumber() {
         return actionNumber;
